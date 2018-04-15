@@ -10,42 +10,9 @@ import random
 import sys
 import os
 import math
+import random
 
 
-
-numbers = []
-
-#open input data file in read mode
-f = open('data.txt', 'r')
-lines = f.readlines()
-
-#load contents of text file to list
-for line in lines:
-   
-    numbers = [int(num) for num in line.split()]
-
-f.close()
-
-
-#last stooge attempt
-def stoogeSort2(A):
-    n = len(A)
-    if n == 2 and A[0] > A[1]:
-        temp = A[0]
-        A[0] = A[1]
-        A[1] = temp
-        return A
-    elif n > 2:
-        m = math.ceil(2*n/3)
-        A = A[0:m]
-        stoogeSort2(A)
-        A = A[n-m:]
-        stoogeSort2(A)
-        A = A[0:m]
-        stoogeSort2(A)
-    else:
-        return A
-        
 
 
 #function: stoogeSort
@@ -81,11 +48,32 @@ def stoogeSort(arr, start, end):
 
 
 
-#call stoogeSort
-#stoogeSort2(numbers)
-stoogeSort(numbers, 0, len(numbers) - 1)
+output_lines = []
 
-#save results to output file
+#open input data file in read mode
+f = open('data.txt', 'r')
+lines = f.readlines()
+lineCount = 0
+
+
+for line in lines:
+    lineCount = lineCount + 1
+    numbersToSort = line[0]
+    numbers = [int(x) for x in line.strip().split(" ")]
+    numbers.pop(0)
+    stoogeSort(numbers, 0, len(numbers) - 1)
+    #print("Sorted numbers in line " + str(lineCount) + ":   " + str(len(numbers)) + " numbers.")
+    output_lines.append(" ".join([str(x) for x in numbers]))
+
+
+
+f.close()
+
 with open('stooge.out', 'w') as outfile:
-    for num in numbers:
-        outfile.write('%d ' %num)
+    for line in output_lines:
+        outfile.write(line + "\n")
+
+outfile.close()
+        
+
+
