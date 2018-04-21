@@ -85,7 +85,7 @@ outfile.close
 #read data from file: odd lines contain the denomination, even lines contain the number to sum up to
 evenIndex = 0
 oddIndex = 1
-iterations = int(len(lines) / 2)
+iterations = int(len(lines) / 2)     #number of lines will always be an even number if correct format was adhered to
 for line in range (0, iterations):
     
     
