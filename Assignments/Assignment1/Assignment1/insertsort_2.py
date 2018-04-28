@@ -58,7 +58,7 @@ numbers = []
 
 #randArrayFill(numbers, 15000)
 
-reverseArrayFill(numbers, 10)
+reverseArrayFill(numbers, 15000)
 
 
 start = time.clock()

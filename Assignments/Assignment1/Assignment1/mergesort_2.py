@@ -34,18 +34,17 @@ def worstCaseMergeFill(arr):
         return
 
     
-    #m = int((len(arr) + 1) /2)
+   
     left = []
     right = []
 
-    #i = 0
+    
     j = 0
     for i in range(0, len(arr), 2):
  
          left.append(arr[i])
          j+=1
-    
-    #i = 1
+   
     j = 0
     for i in range(1, len(arr), 2):
         
@@ -113,16 +112,16 @@ def merge(left, right):
 
 
 numbers = []
-for i in range(10):
+for i in range(15000):
     numbers.append(i)
 
 
-#randArrayFill(numbers, 15000)
+#randArrayFill(numbers, 10)
 
 worstCaseMergeFill(numbers)
-for i in range(len(numbers)):
-    print("%d " %numbers[i], end="")
-print()
+#for i in range(len(numbers)):
+    #print("%d " %numbers[i], end="")
+#print()
 
 start = time.clock()
 
