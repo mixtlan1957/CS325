@@ -56,7 +56,7 @@ def lateToStart(activitiesMap):
 
     #sort activities based on starting time and then reverse so that we may
     #select activities based on latest start time
-    #taskList = sorted(activitiesMap, key=lambda k: k['start'])
+    #taskList = sorted(activitiesMap, key=lambda k: k['start']) #this had to be commented out because proff said so
     taskList = mergeSort(activitiesMap)
     taskList.reverse()
 
@@ -108,7 +108,7 @@ while lineNumber < lineCount:
 
     #output results
     print("Set " + str(setCounter))
-    print("Number of activities selected = " + str(numOfEntries))
+    print("Number of activities selected = " + str(len(greedyOutput)))
     print("Activities:", end=" ")
     for i in greedyOutput:
         print(i, end=" ")
